@@ -9,6 +9,7 @@ dotenv.config();
 //routes
 const authRoute = require('./routes/auth');
 const postRoute = require('./privateroutes/posts');
+const recipeRoute = require('./privateroutes/postRecipe');
 
 //Connect to DB
 mongoose.connect(
@@ -21,6 +22,7 @@ mongoose.connect(
 app.use(express.json());
 app.use('/api/user', authRoute);
 app.use('/api/posts', postRoute);
+app.use('/api/recipe', recipeRoute);
 
 
 
